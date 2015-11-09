@@ -1,0 +1,7 @@
+.reveal section img.photos {float: left; margin: 0; width: 50%;}
+
+.reveal section img.photos.right {width: 33%;}
+
+footer {position: absolute; bottom: 20px; left: 0;}
+
+.reveal footer ul li {font-size: 18px; color: #2a76dd; text-align: left; list-style: none;}

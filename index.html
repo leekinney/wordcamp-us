@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Unintentional Exclusion | WordCamp US</title>
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="LeeAnn Kinney">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/white.css" id="theme">
+        <link rel='stylesheet' href='css/override.css'>
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Printing and PDF exports -->
+        <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <!-- <img src='img/wordcamp-us.png' alt='wordcamp us logo'> -->
+                    <h1>Unintentional Exclusion:</h1>
+                    <h2>Web accessibility and
+                    how we’re failing our users</h2>
+                    <p>
+                        LeeAnn Kinney <a href="https://twitter.com/_leekinney">@_leekinney</a>
+                    </p>
+                </section>
+                <section>
+                    <img src='img/building-blocks.jpg' alt='a child playing with building blocks'>
+                    <small>Image source: <a href='https://www.flickr.com/photos/rahego/6479063181/in/photolist-aSwTKT-5vXyA6-rJGqmH-cnHzZb-8L76pL-wYikAU-ovqtVt-xZM56d-hCPu6z-ug4eue-qUQEPi-9K1geN-bD2mdC-uqoegd-pd8Jvk-6d7Caq-p5ykPQ-e38uo8-oGXikX-6pn3Zg-6ZwXL1-8ucQaU-7ruwaF-vXRCWU-9FnU1C-xqTzA7-sdhWkL-yBrL97-p3yqgS-xDcJMW-7BdqRC-oqJwhC-7i3apF-dVxfTf-7Bdqvf-8u9HPR-7B9BJv-yiHdG2-ajzs8F-p5Aoei-sPEkS4-viB7mM-tEgWYx-7BYxwQ-qULaPj-gwX7ug-5Eo7pg-5Espy5-5Espp5-5Eo8ct'>Flickr</a></small>
+                    <aside class="notes">
+                        some fundamentals that, when not in place underneath may be creating a terrible experience for certain users. The users I'm going to talk about today are the users that might not use a website the way I do or you do. Users that might not use a mouse or need to speak commands to navigate or the users who can't see your awesome designs at all. I may be repeating things you already know inside and out and things you are already aware of and considering with every build and I hope that is the case. But I think it's important to take a step back and revisit some fundamentals of web design and make sure we're providing a great experience for everyone using the web. We should never assume anyone is using our site the same way as the next person, visiting on the latest release of our favorite browser or worst of all that we are in a position to decide that some people should be able to access certain information and others should not.
+                    </aside>
+                </section>
+                <section>
+                    <img src='img/expedia-form.png' alt='a form on expedia used to book a flight'>
+                    <aside class="notes">
+                        Today, it is next to impossible to perform daily tasks without using the web. We can book a flight in minutes seeing a list of options to compare prices, duration, etc. If anyone here has ever had the pleasure of calling an airline to book or change a flight you've probably eperienced the pain of sitting on hold, maybe being transfered to a bunch of different representatives and most likely not getting the friendliest service. If you live in an urban location or just don't like to take time out of your busy schedule or time away from your kids, you may use the convenience of online grocery delivery. Think of how much a blind or visually impaired person could benefit from a service like this, if the site is built in a way they are able to easily navigate and order. We can now have immediate access to test results or a patient portal, or refill a prescription online. Maybe even more important than those conveniences is the endless amounts of information and educational resources on the web. Resources that can allow someone to go back to school at night or learn something like web development in turn helping them find better opportunities, a higher salary or the convenience of being able to work from home. As designers and developers, it is our responsibility to ensure we’re providing the same access to these necessary things to everyone.
+                    </aside>
+                </section>
+                <section>
+                    <img src='img/instacart.png' alt='instacart homepage'>
+                </section>
+                <section>
+                    <img class='photos' src='img/Phone_Rx.png' alt='prescription refill online form'>
+                    <img class='photos right' src='img/capital-one.jpg' alt='capital one mobile check deposit login'>
+                </section>
+                <section>
+                    <img src='img/ppa-form.png' alt='philadelphia  parking authority violation payment form'>
+                </section>
+                <section>
+                    <img src='img/lyft-convenience.png' alt='lyft car advertisement'>
+                </section>
+                <section>
+                    <h2>57 million people in the US living with a disability</h2>
+                    <p>
+                        <small>2010 US Census Bureau</small>
+                    </p>
+                    <aside class="notes">
+                        As of 2010 the US Census reported there were 57 million people living with a disability in the US, representing 19% of our population.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Of all US computer users </h2>
+                    <h3>22 million have a mild visual difficulty
+                    11 million being severe</h3>
+                    <aside class="notes">
+                        In 2003, over 12 years ago, Microsoft conducted a study that found of all US Computer users, 22 million have a mild visual difficulty with 11 million being severe.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Of all US computer users </h2>
+                    <h3>24 million have a mild dexterity difficulty or impairment
+                    7 million being severe</h3>
+                    <aside class="notes">
+                        24 million have a mild dexterity difficulty or impairment with 7 million being severe. (keep in mind that these are only people who self-identify and the stats are probably much higher based off population growth). Find out more about this study. How/why did they gather this information.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Types of Disability</h2>
+                    <ul>
+                        <li class="fragment">Visual: blind or low-sight, color blind</li>
+                        <li class="fragment">Hearing: deaf or hard-of-hearing</li>
+                        <li class="fragment">Physical: MS, ALS, paraplegic/quadriplegic</li>
+                        <li class="fragment">Cognitive: dyslexia, low literacy, learning disabilities, ESL</li>
+                        <li class="fragment">Seizures: photoepileptic seizures</li>
+                    </ul>
+                    <aside class="notes">
+                        What are some disabilities we should be keeping in mind when desinging and developing websites?
+                    </aside>
+                </section>
+                <section>
+                    <h2>Temporary Disabilities</h2>
+                    <ul>
+                        <li class="fragment">Aging: dementia/Alzheimer’s, cataracts, low vision, mobility, loss of fine motor skills</li>
+                        <li class="fragment">Broken limbs</li>
+                        <li class="fragment">Sleep deprivation</li>
+                        <li class="fragment">Chemo side effects</li>
+                        <li class="fragment">Migraines/headaches</li>
+                    </ul>
+                    <aside class='notes'>
+                        A lot of times we only consider severe or long term disabiities but it's really important to also think about temporary or situational disabilities. This is an abbreviated list of other types of disablilites we may not be considering that can really change the way someone uses a website.
+                    </aside>
+                </section>
+                <section>
+                    <div style="width: 960px; height: 500px; padding-left: 20%;">
+                    <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">“By designing for someone with a permanent disability, someone with a situational disability can also benefit.” <a href="http://t.co/H38S2Dw0LL">pic.twitter.com/H38S2Dw0LL</a></p>&mdash; David Storey (@dstorey) <a href="https://twitter.com/dstorey/status/649636741033279488">October 1, 2015</a></blockquote>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </section>
+                <section>
+                    <h2>76 million baby boomers in the US</h2>
+                    <p>
+                        <small>2014 US Census Bureau</small>
+                    </p>
+                    <aside class="notes">
+                        With modern medicine and healthcare we will all hopefully live long, healthy lives. But with old age comes poor vision, cataracts, fine motor control, memory loss, hearing loss, or maybe not wanting to adapt to new technologies at all. Instead of thinking about temporary disabilities we can think of it as we're all really only temporarily abled.
+                    </aside>
+                </section>
+                <section>
+                    <img class='photos' src='img/mouth-stick.jpg' alt='a computer user using a mouth stick to type'>
+                    <img class='photos right' src='img/blind-phone-user.jpg' alt='a blind person using an iphone'>
+                    <img class='photos right' src='img/senior-tablet.jpg' alt='a blinde person using an iphone'>
+                    <aside class="notes">
+                        So after looking at the staggering numbers of people who possibly can’t use our sites why isn’t everyone concerned about this? Why isn’t everyone creating accessible websites that can reach and benefit as many people as possible? Expanding the use of these sites to as many people as possible to sell more, educate more or help more?
+                    </aside>
+                </section>
+                <section>
+                    <h2>Why are we excluding so many users?</h2>
+                    <ul>
+                        <li class="fragment grow">It’s too hard</li>
+                        <li class="fragment grow">It’s too expensive</li>
+                        <li class='fragment grow'>We're lazy</li>
+                        <li class="fragment grow">We don’t realize we’re doing it</li>
+                    </ul>
+                    <aside class="notes">
+                        Is it because we think creating accessible websites is hard. Because we think creating accessible websites is expensive? Because we’re lazy? Or because we just don’t realize that we’re excluding these people? Let's look at these arguments or excuses
+                    </aside>
+                </section>
+                <section>
+                    <h2>It’s expensive</h2>
+                    <h3 class="fragment">Not if it’s built in at the beginning</h3>
+                    <aside class="notes">
+                        Building accessible websites can be expensive if it wasn't a consideration in the beginning. If we're going back and refactoring a ton of code and needing to rebuild other functionality of the site to be accessible than yes, it can get a little costly. The same can be said for buildings where the architect didn't consider accessibility in the beginning and the contractor now has to go back, maybe years later, add try to add in a ramp or an elevator.
+                    </aside>
+                </section>
+                <section>
+                    <h2>It’s hard</h2>
+                    <h3 class="fragment">Here are a few easy steps to get started</h3>
+                    <aside class="notes">
+                        Sometimes it can be a little difficult but there are 8 really easy things you can do to get started with the bare minimum.
+                    </aside>
+                </section>
+                <section>
+                    <h2>8 Easy Tips</h2>
+                    <ul>
+                        <li class="fragment">Alt text</li>
+                        <li class="fragment">Links</li>
+                        <li class="fragment">Navigation</li>
+                        <li class="fragment">Contrast &amp; Color</li>
+                        <li class="fragment">Keyboard focus</li>
+                        <li class="fragment">Forms</li>
+                        <li class="fragment">Semantic HTML</li>
+                        <li class='fragment'>Video captions</li>
+                    </ul>
+                </section>
+                <!-- <section>
+                    <h2>Alt Text</h2>
+                    <ul>
+                        <li class="fragment">Provide the function, not the content</li>
+                        <li class="fragment">Make sure it's providing context</li>
+                        <li class="fragment">If image is purely decorative use “” to instruct screen reader to skip</li>
+                    </ul>
+                                                                                                                                  <pre class="fragment"><code data-trim>
+                                                                                                                                                            <p>&#60;img src="img/twitter-logo.png" alt="follow us on twitter"&#62;</p>
+                    </code></pre>
+                    <aside class="notes">
+                        Also helps with SEO
+                    </aside>
+                </section>
+                <section>
+                    <section>
+                        <h2>Links</h2>
+                        <ul>
+                            <li class="fragment">Don’t use color alone to signify a link</li>
+                            <li class="fragment">Link text should make sense (and let a user know where it is taking them)</li>
+                            <li class="fragment">Don’t open in a new window (unless you let the user know first)</li>
+                        </ul>
+                        <aside class="notes">
+                            capital one 360 example
+                        </aside>
+                    </section>
+                    <section data-background-video="video/capital-one-360.mov" data-background-color="#fff">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Navigation</h2>
+                        <ul>
+                            <li class="fragment">Provide skip to main content</li>
+                            <li class="fragment">Make sure users can tab through navigation </li>
+                        </ul>
+                        <aside class="notes">
+                            WebAIM example
+                        </aside>
+                    </section>
+                    <section data-background-video="video/webaim-nav.mov" data-background-color="#fff">
+                    </section>
+                </section>
+                <section>
+                    <h2>Color &amp; Contrast</h2>
+                    <ul>
+                        <li class="fragment">Don’t rely on color to indicate something</li>
+                        <li class="fragment">Use a minimum contrast ratio of 4.5:1 for normal text, 3:1 for large text</li>
+                    </ul>
+                    <aside class="notes">
+                        red/green colorblindness most common; green for good red for error - find form example
+                    </aside>
+                </section>
+                <section>
+                    <h2>Keyboard Focus</h2>
+                    <ul>
+                        <li class="fragment">Don’t remove :focus</li>
+                        <li class="fragment">Style it to fit in with the look and feel of your site</li>
+                    </ul>
+                    <aside class="notes">
+                        provide example good vs. bad
+                    </aside>
+                </section>
+                <section>
+                    <h2>Accessible Forms</h2>
+                    <ul>
+                        <li class="fragment">Labels</li>
+                        <li class="fragment">Tab</li>
+                        <li class="fragment">Error Messages</li>
+                        <li class="fragment">Captchas</li>
+                    </ul>
+                    <aside class="notes">
+                        White House example?
+                    </aside>
+                </section>
+                <section>
+                    <h2>Semantic HTML</h2>
+                    <ul>
+                        <li class="fragment">Gives the page meaning and structure</li>
+                        <li class="fragment">Use header tags in correct order</li>
+                    </ul>
+                    <aside class="notes">
+                        If creating static sites - Probably the easiest and hopefully something we're already doing
+                    </aside>
+                </section>
+                <section>
+                    <h2>Video Captions</h2>
+                    <ul>
+                        <li class='fragment'>Provide captions if you have video on your site</li>
+                        <li class='fragment'>Helps SEO</li>
+                        <li class='fragment'>Helps users to scan content of video before watching</li>
+                    </ul>
+                </section> -->
+                <section>
+                    <h2>It's Unintentional</h2>
+                    <p class="fragment">So let's make an intentional effort to fix it.</p>
+                    <aside class="notes">
+                        And finally, the reason I think most inaccessible sites exist, is because it's unintentional. I’ve had the opportunity to speak about a11y over the past year or so and always loved the discussion that came after. I really found that most des/dev just didn’t realize some of the choices they were making were detrimental to a user’s experience. I would get annoyed when I saw inaccessible sites but then began to realize that a lot of the time it really was unintentional. We often don’t think about certain things unless we are directly affected by it. There isn’t a way to analyze the amount of users coming to our sites using assistive technology which can sometimes make the argument for making accessible sites difficult. It's our responsibility to make accessibility a priority. Sometimes it can take a little convincing but there are more than enough reasons why we need to stop with the excuses and focus inclusive design. Site that are built with a11y in mind benefit everyone, not just people using assistive technology. Good UX goes hand-in-hand with a11y.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Accessibility Offline</h2>
+                    <ul>
+                        <li class="fragment grow">Classes</li>
+                        <li class="fragment grow">Meetups</li>
+                        <li class="fragment grow">Conferences</li>
+                    </ul>
+                    <aside class="notes">
+                        So because this is a really general talk on thinking differently about accessibility and inclusivity, one other thing I wanted to touch on quickly is keeping accessibility in mind offline. In our community we are constantly learning and sharing knowledge. Whether it's through classes, Meetups or conferences. People with disabilities can be exluded from participation if the physical spaces can not accomodate them. If you’re scheduling an event, make sure the space is wheelchair accessible. This could also benefit someone with a broken foot who is on crutches, or a mom who needs to bring a stroller in, or anyone else with any sort of mobility issues. If you are presenting, make sure your slides are readable and can be seen from the last row. Don't overwhelm wih too much content on your slides or crazy animations. Small steps like these help to create a more inclusive and diverse community, which in the end everyone benefits from.
+                    </aside>
+                </section>
+                <section>
+                    <h2>Tools &amp; extensions</h2>
+                    <ul>
+                        <li><a href='https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en'>Chrome | Accessibility Dev Tools</a></li>
+                        <li><a href='https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/'>Firefox | Accessibility Evaluation Toolbar</a></li>
+                        <li><a href='http://wave.webaim.org/toolbar/'>Wave Toolbar (available as a Chrome or Firefox Extension or bookmarklet</a></li>
+                        <li><a href='https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en'>ChromeVox</a></li>
+                        <li><a href='https://addons.mozilla.org/en-US/firefox/addon/fangs-screen-reader-emulator/?src=search'>Firefox | Fangs</a></li>
+                        <li><a href='https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en&gl=US'>Chrome | No Coffee (low-vision simulator)</a></li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>quickly audit</li>
+                            <li>won't catch everything</li>
+                            <li>human testing</li>
+                            <li>voiceover on a mac</li>
+                            <li>Easily tab</li>
+                            <li>zoom in on designs</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li class="fragment"><a href="http://a11yproject.com/">The Accessibility Project</a></li>
+                        <li class="fragment"><a href="http://www.w3.org/WAI/">W3C Web Accessibility Initiative (WAI)</a></li>
+                        <li class="fragment"><a href="http://webaim.org/">WebAIM</a>, an accessibility-focused organization with great information</li>
+                        <li class="fragment"><a href="http://design4access.nomensa.com/checklist.html">Accessibilty Checklist</a></li>
+                        <li class="fragment"><a href="http://a11ywins.tumblr.com/">A11Y Wins</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>WordPress &amp; Accessibility Resources</h2>
+                    <ul>
+                        <li class="fragment"><a href="https://github.com/wpaccessibility/a11ythemepatterns">Patterns for creating accessible-ready WordPress themes</a></li>
+                        <li class="fragment"><a href="https://make.wordpress.org/accessibility/">WP Accessibility Team</a></li>
+                        <li class="fragment"><a href="https://twitter.com/WPAccessibility">WPAccessibility Team Twitter</a></li>
+                        <li class="fragment"><a href="https://wordpress.org/themes/search/accessibility/">Accessible
+                        Themes</a></li>
+                        <li class="fragment"><a href="https://foxland.fi/downloads/kuorinka/">Kuorinka Theme</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Thank you!</h2>
+                    <h3><a href='https://www.twitter.com/_leekinney'>@_leekinney</a></h3>
+                    <h3><a href='mailto:hi@leekinney.is'>hi@leekinney.is</a></h3>
+                    <h3><a href='http://leekinney.github.io/wordcamp-us'>leekinney.github.io/wordcamp-us</a></h3>
+                </section>
+                <!--<section>-->
+                <!--<h2>Fragment Styles</h2>-->
+                <!--<p>There's different types of fragments, like:</p>-->
+                <!--<p class="fragment grow">grow</p>-->
+                <!--<p class="fragment shrink">shrink</p>-->
+                <!--<p class="fragment fade-out">fade-out</p>-->
+                <!--<p class="fragment current-visible">current-visible</p>-->
+                <!--<p class="fragment highlight-red">highlight-red</p>-->
+                <!--<p class="fragment highlight-blue">highlight-blue</p>-->
+                <!--</section>-->
+                <!--<section id="transitions">-->
+                <!--<h2>Transition Styles</h2>-->
+                <!--<p>-->
+                <!--You can select from different transitions, like: <br>-->
+                <!--<a href="?transition=none#/transitions">None</a> - -->
+                <!--<a href="?transition=fade#/transitions">Fade</a> - -->
+                <!--<a href="?transition=slide#/transitions">Slide</a> - -->
+                <!--<a href="?transition=convex#/transitions">Convex</a> - -->
+                <!--<a href="?transition=concave#/transitions">Concave</a> - -->
+                <!--<a href="?transition=zoom#/transitions">Zoom</a>-->
+                <!--</p>-->
+                <!--</section>-->
+                <!--<section>-->
+                <!--<h2>Clever Quotes</h2>-->
+                <!--<p>-->
+                <!--These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">-->
+                <!--&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:-->
+                <!--</p>-->
+                <!--<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">-->
+                <!--&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would-->
+                <!--reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;-->
+                <!--</blockquote>-->
+                <!--</section>-->
+                <!--<section>-->
+                <!--<h2>Speaker View</h2>-->
+                <!--<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>-->
+                <!--<p>Press the <em>S</em> key to try it out.</p>-->
+                <!--<aside class="notes">-->
+                <!--Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).-->
+                <!--</aside>-->
+                <!--</section>-->
+            </div>
+            <footer>
+                <ul>
+                    <li>@_leekinney</li>
+                    <li>leekinney.github.io/wordcamp-us</li>
+                </ul>
+            </footer>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+        ]
+        });
+        </script>
+    </body>
+</html>
